@@ -10,8 +10,7 @@ interface InputDisplayProps {
 
 const InputDisplay: React.FC<InputDisplayProps> = ({ 
   targetText, 
-  userInput, 
-  characters 
+  userInput
 }) => {
   const normalizedTarget = normalizeText(targetText);
   const normalizedInput = normalizeText(userInput);

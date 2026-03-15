@@ -17,7 +17,11 @@ import UyghurKeyboard from './UyghurKeyboard';
 
 
 
-const TypingPractice: React.FC = () => {
+interface TypingPracticeProps {
+  testType?: 'uyghur' | 'pinyin' | 'english';
+}
+
+const TypingPractice: React.FC<TypingPracticeProps> = ({ testType: _testType = 'uyghur' }) => {
   const [category, setCategory] = useState<'word' | 'sentence' | 'article'>('sentence');
   const [showKeyboard, setShowKeyboard] = useState(true);
   

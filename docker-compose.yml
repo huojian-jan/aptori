@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   uyghur-typing:
-    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/uyghur-typing-practice:latest
+    image: ghcr.io/huojian-jan/aptori:latest
     container_name: uyghur-typing-practice
     ports:
       - "8080:80"
