@@ -149,25 +149,32 @@ const UyghurKeyboard: React.FC<UyghurKeyboardProps> = ({ currentChar }) => {
     }
 
     if (keyInfo.type === 'normal') {
+      const isUyMainTarget = keyInfo.uy === currentChar;
+      const isUyShiftTarget = keyInfo.uyShift === currentChar;
+      const isEnTarget = keyInfo.en.toUpperCase() === currentChar || keyInfo.en === currentChar || keyInfo.shift === currentChar;
+
       return (
         <div className="key-content">
-          {/* 主字符：维吾尔语字母（最大最明显） */}
+          {/* 主字符：维吾尔语字母 */}
           {keyInfo.uy ? (
-            <div className="key-uyghur-main">{keyInfo.uy}</div>
+            <div className={`key-uyghur-main ${isUyMainTarget ? 'target' : ''}`}>{keyInfo.uy}</div>
           ) : (
-            <div className="key-main-char">{keyInfo.en.toUpperCase()}</div>
+            <div className={`key-main-char ${isEnTarget ? 'target' : ''}`}>{keyInfo.en.toUpperCase()}</div>
           )}
-          {/* 副字符：英文字母（较小，左下角） - 仅维吾尔语键显示 */}
+          
+          {/* 副字符：英文字母 */}
           {keyInfo.uy && (
             <div className="key-english-small">{keyInfo.en.toUpperCase()}</div>
           )}
-          {/* 维吾尔语Shift字符：蓝色小字符（右上角） - 根据映射表样式 */}
+          
+          {/* 维吾尔语Shift字符 */}
           {keyInfo.uyShift && keyInfo.uyShift !== keyInfo.uy && (
-            <div className="key-uyghur-shift">↑{keyInfo.uyShift}</div>
+            <div className={`key-uyghur-shift ${isUyShiftTarget ? 'target' : ''}`}>{keyInfo.uyShift}</div>
           )}
-          {/* Shift字符：标准键盘的Shift符号（左上角） - 仅标准键显示 */}
+          
+          {/* 标准Shift字符 */}
           {!keyInfo.uy && keyInfo.shift && (
-            <div className="key-shift-symbol">{keyInfo.shift}</div>
+            <div className={`key-shift-symbol ${isEnTarget && keyInfo.shift === currentChar ? 'target' : ''}`}>{keyInfo.shift}</div>
           )}
         </div>
       );

@@ -13,33 +13,22 @@ export function internalToExternalSpaces(text: string): string {
   return text.replace(new RegExp(INTERNAL_SPACE, 'g'), ' ');
 }
 
-// 维吾尔语示例文本
-export const SAMPLE_TEXTS_UY = [
-  'ئۇيغۇر تىلى ئۆگىنىش پروگراممىسى',
-  'مەن ئۇيغۇر تىلىدا يېزىشنى ئۆگىنىمەن',
-  'بۇ بىر ئاددىي تىل ئۆگىنىش پروگراممىسى',
-  'تېز ۋە تەخت يېزىش ئۈچۈن مەشىق قىلىڭ',
-  'ھەر كۈنى مەشىق قىلسىڭىز تېزراق ئۆگىنىسىز',
-  'ئۇيغۇر تىلى بىزنىڭ ئانا تىلىمىز',
-  'ھەر كىشى ئۆز تىلىنى بىلىشى كېرەك',
-  'تېخنولوگىيە ۋە تىل ئۆگىنىش',
-  'ئىنتېرنېت ئارقىلىق ئۇيغۇرچە ئۆگىنىش',
-  'ئۇيغۇر مەدەنىيىتىنى ئۆگىنىش',
-  'ئۇيغۇر ئەدەبىياتىنى ئوقۇش',
-  'ئۇيغۇر تارىخىنى بىلىش',
-  'مەن بىز ئۇ كىتاب خۇشال ئانا ئۆگىنىش مورا خىزمەت تېخنىكا',
-  'مەن ئۇيغۇر تىلىنى ياخشى كۆرىمەن',
-  'ھەر كۈنى مەشىق قىلىش مۇھىم',
-  'تىل ئۆگىنىش صابىر تاۋاۋۇزنى تەلەپ قىلىدۇ',
-  'ئۇيغۇرچە يېزىشنى تېخىمۇ ياخشى قىلىمەن',
-  'ئۇيغۇر تىلى بىزنىڭ ئانا تىلىمىز بولۇپ، ئۇنىڭ كۈندىلىك قوللىنىلىشى ۋە يېزىق بىيلەن مەدەنىيەتنى ساقلاش بەك مۇھىم.',
-  'مەشىق قىلىش ئارقىلىق تېخىمۇ ياخشى ئۈنۈملەرگە ئېرىشىشكە بولىدۇ.',
-  'تىل ئۆگىنىش پەقەت سۆزلەش بىلەنلا چەكلىنىپ قالماي، ئۇنىڭ تارىخى، مەدەنىيىتى ۋە يېزىق سىستېمىسىنى چۈشىنىدىغان بولۇشىمۇ كېرەك.'
-];
+import { UY_WORDS, UY_SENTENCES, UY_ARTICLES } from './data/typingData';
+export { UY_WORDS, UY_SENTENCES, UY_ARTICLES };
 
 // 随机获取练习文本
-export function getRandomText(): string {
-  const pool: string[] = SAMPLE_TEXTS_UY;
+export function getRandomText(category: 'word' | 'sentence' | 'article' = 'sentence'): string {
+  let pool: string[] = UY_SENTENCES;
+  if (category === 'word') pool = UY_WORDS;
+  else if (category === 'article') pool = UY_ARTICLES;
+  
+  // 对于单词，随机抽取不重复的几个
+  if (category === 'word') {
+    const count = Math.min(pool.length, 5 + Math.floor(Math.random() * 5));
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count).join(' ');
+  }
+  
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
