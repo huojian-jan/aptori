@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  uyghur-typing:
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER}/uyghur-typing-practice:latest
+    container_name: uyghur-typing-practice
+    ports:
+      - "8080:80"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
