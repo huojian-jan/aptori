@@ -22,11 +22,9 @@ export function getRandomText(category: 'word' | 'sentence' | 'article' = 'sente
   if (category === 'word') pool = UY_WORDS;
   else if (category === 'article') pool = UY_ARTICLES;
   
-  // 对于单词，随机抽取不重复的几个
+  // 对于单词，只随机抽取一个词
   if (category === 'word') {
-    const count = Math.min(pool.length, 5 + Math.floor(Math.random() * 5));
-    const shuffled = [...pool].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count).join(' ');
+    return pool[Math.floor(Math.random() * pool.length)];
   }
   
   return pool[Math.floor(Math.random() * pool.length)];
@@ -119,5 +117,5 @@ export function calculateStats(
 export function isInputComplete(targetText: string, userInput: string): boolean {
   const normalizedTarget = normalizeText(targetText);
   const normalizedInput = normalizeText(userInput);
-  return normalizedInput.length >= normalizedTarget.length;
+  return normalizedInput === normalizedTarget;
 }

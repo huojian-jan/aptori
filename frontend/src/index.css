@@ -155,13 +155,59 @@ body {
 .practice-main {
   background: white;
   border-radius: 20px;
-  padding: 24px; /* Reduced padding */
+  padding: 24px;
   box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Reduced gap */
+  gap: 20px;
   flex: 1;
-  min-height: 0; /* Important for flex-shrink/overflow */
+  min-height: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.practice-controls {
+  display: flex;
+  justify-content: flex-end; /* Align with RTL text flow start (right) */
+  margin-bottom: -10px;
+}
+
+.refresh-btn-inline {
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px !important;
+  height: auto !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.refresh-btn-inline:hover {
+  color: #3b82f6 !important;
+  background: #eff6ff !important;
+}
+
+.refresh-btn-inline .anticon {
+  font-size: 14px;
+}
+
+.practice-main.mode-word {
+  align-items: center;
+  justify-content: center;
+}
+
+.practice-main.mode-word .practice-target {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.practice-main.mode-word .practice-input {
+  max-width: 600px;
+  text-align: center;
 }
 
 .practice-target {
@@ -203,8 +249,36 @@ body {
 }
 
 .action-btn {
-  color: #64748b !important;
-  font-weight: 500;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  padding: 6px 16px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  height: 36px !important;
+  font-size: 13px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.action-btn:hover {
+  background: #ffffff !important;
+  color: #2563eb !important;
+  border-color: #bfdbfe !important;
+  box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.15) !important;
+  transform: translateY(-1px);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+  background: #f8fafc !important;
+}
+
+.action-btn .anticon {
+  font-size: 14px;
 }
 
 .keyboard-toggle {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Typography, Switch, Button, Segmented } from 'antd';
+import { Switch, Button, Segmented } from 'antd';
 import { TypingState, CharacterInfo } from '../types';
 import {
   getRandomText,
@@ -12,10 +12,10 @@ import {
   INTERNAL_SPACE
 } from '../utils';
 import { computeActiveChar } from '../services/activeChar';
-import { KeyOutlined } from '@ant-design/icons';
+import { KeyOutlined, ReloadOutlined } from '@ant-design/icons';
 import UyghurKeyboard from './UyghurKeyboard';
 
-const { Text } = Typography;
+
 
 const TypingPractice: React.FC = () => {
   const [category, setCategory] = useState<'word' | 'sentence' | 'article'>('sentence');
@@ -94,13 +94,6 @@ const TypingPractice: React.FC = () => {
         const characters = calculateCharacterStates(normalizedTarget, normalizedInput, currentIndex);
         const completed = isInputComplete(normalizedTarget, normalizedInput);
 
-        if (completed) {
-          // 延迟一小段时间自动跳转到下一个，以便用户看清最后一个字变绿
-          setTimeout(() => {
-            handleRefresh();
-          }, 600);
-        }
-
         return {
           ...prev,
           userInput: externalToInternalSpaces(newInput),
@@ -126,6 +119,16 @@ const TypingPractice: React.FC = () => {
   useEffect(() => {
     updateStats();
   }, [updateStats]);
+
+  // 当完成且正确输入时，延迟自动跳转
+  useEffect(() => {
+    if (typingState.isCompleted) {
+      const timer = setTimeout(() => {
+        handleRefresh();
+      }, 800);
+      return () => clearTimeout(timer);
+    }
+  }, [typingState.isCompleted, handleRefresh]);
 
   const renderTargetText = () => {
     return (
@@ -175,9 +178,7 @@ const TypingPractice: React.FC = () => {
                 size="small"
               />
             </div>
-            <Button type="text" onClick={handleRefresh} className="action-btn">
-              刷新文本 (Tab)
-            </Button>
+
           </div>
         </div>
       </div>
@@ -189,7 +190,17 @@ const TypingPractice: React.FC = () => {
           </div>
         )}
 
-        <div className="practice-main">
+        <div className={`practice-main ${category === 'word' ? 'mode-word' : ''}`}>
+          <div className="practice-controls">
+            <Button 
+              icon={<ReloadOutlined />} 
+              onClick={handleRefresh} 
+              className="refresh-btn-inline"
+              type="text"
+            >
+              换一批
+            </Button>
+          </div>
           {renderTargetText()}
           <textarea
             className="practice-input"

@@ -28,7 +28,7 @@ class UyghurKeyboardHint implements KeyboardHintAlgorithm {
     const base = this.map[currentChar];
     if (base) {
       if (this.shiftVariants[currentChar]) {
-        return [base, 'ShiftLeft', 'ShiftRight'];
+        return [base, 'ShiftLeft'];
       }
       return [base];
     }
@@ -39,8 +39,11 @@ class UyghurKeyboardHint implements KeyboardHintAlgorithm {
     if (keyValue === 'Space') return currentChar === ' ';
     const base = this.map[currentChar];
     if (base) {
-      if (keyValue === 'ShiftLeft' || keyValue === 'ShiftRight') {
+      if (keyValue === 'ShiftLeft') {
         return !!this.shiftVariants[currentChar];
+      }
+      if (keyValue === 'ShiftRight') {
+        return false;
       }
       return keyValue.toLowerCase() === base.toLowerCase();
     }
