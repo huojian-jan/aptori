@@ -1,0 +1,42 @@
+# Gitee Go：推送 main 分支后构建前端并部署到 Gitee Pages 分支 gitee-pages
+#
+# 首次使用请在仓库「Gitee Go → 流水线」中启用本仓库流水线，并在流水线变量（建议设为「保密」）中配置：
+#   GITEE_CI_USERNAME  — Gitee 登录用户名
+#   GITEE_CI_TOKEN     — 私人令牌（需含仓库推送权限；勿提交到代码库）
+#   GITEE_REPO         — 仓库路径，本仓库为 yasenrk/aptori
+#
+# 然后在「服务 → Gitee Pages」中将部署分支设为 gitee-pages，目录选根目录 /
+
+version: '1.0'
+name: deploy-gitee-pages
+displayName: 构建并部署 Gitee Pages
+triggers:
+  trigger: auto
+  push:
+    branches:
+      prefix:
+        - main
+stages:
+  - name: build-and-publish
+    displayName: 构建并发布静态站
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: build@nodejs
+        name: build_and_push_pages
+        displayName: Node 构建并推送 gitee-pages
+        nodeVersion: 20.10.0
+        commands:
+          - npm config set registry https://registry.npmmirror.com
+          - cd frontend && npm ci && npm run build
+          - cd frontend/dist && git init && git config user.email "ci@gitee.com" && git config user.name "Gitee Go" && git add -A && git commit -m "chore(pages): deploy from Gitee Go" && git branch -M gitee-pages && git push --force "https://${GITEE_CI_USERNAME}:${GITEE_CI_TOKEN}@gitee.com/${GITEE_REPO}.git" gitee-pages
+        artifacts:
+          - name: BUILD_ARTIFACT
+            path:
+              - ./frontend/dist
+        caches:
+          - ~/.npm
+        notify: []
+        strategy:
+          retry: '0'

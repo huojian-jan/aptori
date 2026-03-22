@@ -2,8 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import HomePage from './components/HomePage';
 
 function App() {
+  const basename =
+    import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
+
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="app-container">
         <Routes>
           <Route path="/" element={<HomePage />} />
