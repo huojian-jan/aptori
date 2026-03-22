@@ -10,9 +10,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$ROOT/frontend"
+cd "${ROOT}/frontend"
 
-echo "==> 安装依赖并构建…"
+printf '%s\n' "==> 安装依赖并构建…"
 npm ci
 npm run build
 
@@ -25,8 +25,9 @@ if [[ -z "$REMOTE" ]]; then
   exit 1
 fi
 
-echo "==> 推送到分支 gitee-pages（远程: $REMOTE）…"
-cd "$ROOT/frontend/dist"
+printf '%s\n' "==> 推送到分支 gitee-pages"
+printf '%s\n' "    远程: ${REMOTE}"
+cd "${ROOT}/frontend/dist"
 rm -rf .git
 git init
 git config user.email "deploy@local"
@@ -34,6 +35,6 @@ git config user.name "local deploy"
 git add -A
 git commit -m "chore(pages): deploy $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git branch -M gitee-pages
-git push --force "$REMOTE" gitee-pages
+git push --force "${REMOTE}" gitee-pages
 
-echo "==> 完成。请在 Gitee「服务 → Gitee Pages」中将部署分支设为 gitee-pages（若尚未设置）。"
+printf '%s\n' "==> 完成。请在 Gitee「服务 → Gitee Pages」中将部署分支设为 gitee-pages（若尚未设置）。"
