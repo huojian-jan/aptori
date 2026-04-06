@@ -1,0 +1,100 @@
+export const wordsRaw = `ni hao
+xie xie
+zai jian
+dui bu qi
+mei guan xi
+zhong guo
+bei jing
+shang hai
+ren min
+gong zuo
+xue xi
+peng you
+jia ren
+shi jian
+di fang
+dong xi
+yi si
+wen ti
+hui da
+xian zai
+yi jing
+ran hou
+suo yi
+yin wei
+dan shi
+ke shi
+ru guo
+zhi dao
+jue de
+xi huan
+zuo you
+shang xia
+qian hou
+da xiao
+duo shao
+ji ge
+na ge
+zhe ge
+she me
+zen me
+wei shen me
+shen me shi hou
+zai na er
+cong na er
+gen shui
+bi jiao
+yi qi
+yi ban
+te bie
+fei chang
+zhen de
+dang ran
+ben lai
+qi shi
+guo qu
+wei lai
+yi hou
+qi qian
+zhao pian
+dian hua
+dian nao
+shou ji
+hu lian wang
+xin xi
+shu ju
+cheng xu
+ying yong
+xi tong
+wang luo
+ji suan
+bao gao
+wen jian
+mu lu
+sou suo
+xia zai
+shang chuan
+jie kou
+fu wu
+ke hu
+yong hu
+mi ma
+an quan
+bao hu
+she ji
+kai fa
+ce shi
+bu shu
+yun hang
+wei hu
+geng xin
+sheng ji
+cuo wu
+diao shi
+you hua
+xing neng
+su du
+nei cun
+chu li qi
+jian pan
+shu biao`;

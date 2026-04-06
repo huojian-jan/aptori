@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Button, Typography } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import TypingPractice from './TypingPractice';
 import HomePage from './HomePage';
 
 const { Header, Content } = Layout;
@@ -85,9 +84,7 @@ const MainApp: React.FC = () => {
 
           {/* 练习内容区域 */}
           <Content style={{ padding: 0 }}>
-            <TypingPractice 
-              testType={testConfig?.testType || 'uyghur'}
-            />
+            {/* MainApp 已弃用，由 TypingPage + MODES 配置替代 */}
           </Content>
         </Layout>
       )}

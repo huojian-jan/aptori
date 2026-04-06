@@ -1,0 +1,81 @@
+import { KeyDefinition } from './uyghurLayout';
+
+// 五笔键盘布局：QWERTY + 每个键上的五笔字根标注
+// wb 字段：该键对应的五笔字根（显示在键面上）
+export interface WubiKeyDefinition extends KeyDefinition {
+  wb?: string;   // 五笔字根
+}
+
+export const wubiLayout: WubiKeyDefinition[][] = [
+  [
+    { key: '`', en: '`', shift: '~', type: 'normal', width: 1 },
+    { key: '1', en: '1', shift: '!', type: 'normal', width: 1 },
+    { key: '2', en: '2', shift: '@', type: 'normal', width: 1 },
+    { key: '3', en: '3', shift: '#', type: 'normal', width: 1 },
+    { key: '4', en: '4', shift: '$', type: 'normal', width: 1 },
+    { key: '5', en: '5', shift: '%', type: 'normal', width: 1 },
+    { key: '6', en: '6', shift: '^', type: 'normal', width: 1 },
+    { key: '7', en: '7', shift: '&', type: 'normal', width: 1 },
+    { key: '8', en: '8', shift: '*', type: 'normal', width: 1 },
+    { key: '9', en: '9', shift: '(', type: 'normal', width: 1 },
+    { key: '0', en: '0', shift: ')', type: 'normal', width: 1 },
+    { key: '-', en: '-', shift: '_', type: 'normal', width: 1 },
+    { key: '=', en: '=', shift: '+', type: 'normal', width: 1 },
+    { key: 'Backspace', en: 'Backspace', type: 'special', width: 2 },
+  ],
+  [
+    { key: 'Tab', en: 'Tab', type: 'special', width: 1.5 },
+    { key: 'q', en: 'q', wb: '金', type: 'normal', width: 1 },
+    { key: 'w', en: 'w', wb: '人', type: 'normal', width: 1 },
+    { key: 'e', en: 'e', wb: '月', type: 'normal', width: 1 },
+    { key: 'r', en: 'r', wb: '白', type: 'normal', width: 1 },
+    { key: 't', en: 't', wb: '禾', type: 'normal', width: 1 },
+    { key: 'y', en: 'y', wb: '言', type: 'normal', width: 1 },
+    { key: 'u', en: 'u', wb: '立', type: 'normal', width: 1 },
+    { key: 'i', en: 'i', wb: '水', type: 'normal', width: 1 },
+    { key: 'o', en: 'o', wb: '火', type: 'normal', width: 1 },
+    { key: 'p', en: 'p', wb: '之', type: 'normal', width: 1 },
+    { key: '[', en: '[', shift: '{', type: 'normal', width: 1 },
+    { key: ']', en: ']', shift: '}', type: 'normal', width: 1 },
+    { key: '\\', en: '\\', shift: '|', type: 'normal', width: 1.5 },
+  ],
+  [
+    { key: 'CapsLock', en: 'CapsLock', type: 'special', width: 1.75 },
+    { key: 'a', en: 'a', wb: '工', type: 'normal', width: 1 },
+    { key: 's', en: 's', wb: '木', type: 'normal', width: 1 },
+    { key: 'd', en: 'd', wb: '大', type: 'normal', width: 1 },
+    { key: 'f', en: 'f', wb: '土', type: 'normal', width: 1 },
+    { key: 'g', en: 'g', wb: '王', type: 'normal', width: 1 },
+    { key: 'h', en: 'h', wb: '目', type: 'normal', width: 1 },
+    { key: 'j', en: 'j', wb: '日', type: 'normal', width: 1 },
+    { key: 'k', en: 'k', wb: '口', type: 'normal', width: 1 },
+    { key: 'l', en: 'l', wb: '田', type: 'normal', width: 1 },
+    { key: ';', en: ';', shift: ':', type: 'normal', width: 1 },
+    { key: "'", en: "'", shift: '"', type: 'normal', width: 1 },
+    { key: 'Enter', en: 'Enter', type: 'special', width: 2.25 },
+  ],
+  [
+    { key: 'Shift', en: 'ShiftLeft', type: 'special', width: 2.25 },
+    { key: 'z', en: 'z', wb: '纟', type: 'normal', width: 1 },
+    { key: 'x', en: 'x', wb: '纟', type: 'normal', width: 1 },
+    { key: 'c', en: 'c', wb: '又', type: 'normal', width: 1 },
+    { key: 'v', en: 'v', wb: '女', type: 'normal', width: 1 },
+    { key: 'b', en: 'b', wb: '子', type: 'normal', width: 1 },
+    { key: 'n', en: 'n', wb: '已', type: 'normal', width: 1 },
+    { key: 'm', en: 'm', wb: '山', type: 'normal', width: 1 },
+    { key: ',', en: ',', shift: '<', type: 'normal', width: 1 },
+    { key: '.', en: '.', shift: '>', type: 'normal', width: 1 },
+    { key: '/', en: '/', shift: '?', type: 'normal', width: 1 },
+    { key: 'Shift', en: 'ShiftRight', type: 'special', width: 2.75 },
+  ],
+  [
+    { key: 'ControlLeft', en: 'Ctrl', type: 'special', width: 1.25 },
+    { key: 'MetaLeft', en: 'Win', type: 'special', width: 1.25 },
+    { key: 'AltLeft', en: 'Alt', type: 'special', width: 1.25 },
+    { key: 'Space', en: 'Space', type: 'special', width: 6 },
+    { key: 'AltRight', en: 'Alt', type: 'special', width: 1.25 },
+    { key: 'MetaRight', en: 'Win', type: 'special', width: 1.25 },
+    { key: 'ContextMenu', en: 'Menu', type: 'special', width: 1.25 },
+    { key: 'ControlRight', en: 'Ctrl', type: 'special', width: 1.25 },
+  ],
+];

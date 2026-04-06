@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "home": {
+    "title": "Online Typing Practice",
+    "subtitle": "Improve your typing speed and accuracy",
+    "tagline": "Free · No Registration · Start Instantly",
+    "startPractice": "Start Practice",
+    "whyHathat": "Why HatHat?",
+    "feature1": "Multiple language typing modes",
+    "feature2": "Real-time WPM and accuracy stats",
+    "feature3": "Virtual keyboard to guide learning",
+    "feature4": "Completely free, no sign-up needed",
+    "faqTitle": "FAQ",
+    "faq1Q": "What languages does HatHat support?",
+    "faq1A": "HatHat supports Uyghur, Chinese Pinyin, Wubi input method, and English typing practice.",
+    "faq2Q": "Do I need to create an account?",
+    "faq2A": "No registration required. Open the page and start practicing immediately — all features are free.",
+    "faq3Q": "How can I improve my typing speed?",
+    "faq3A": "Start with word practice, then progress to sentences and articles. Daily practice is the most effective approach."
+  },
+  "modes": {
+    "uyghur": {
+      "label": "Uyghur Typing",
+      "description": "Practice the Uyghur keyboard layout and Arabic-script input"
+    },
+    "pinyin": {
+      "label": "Pinyin Typing",
+      "description": "Practice Chinese Pinyin input to boost Mandarin typing speed"
+    },
+    "wubi": {
+      "label": "Wubi Typing",
+      "description": "Master Wubi radical keys for efficient Chinese character input"
+    },
+    "english": {
+      "label": "English Typing",
+      "description": "Train with words, sentences and articles to boost English input speed"
+    }
+  },
+  "practice": {
+    "word": "Word",
+    "sentence": "Sentence",
+    "article": "Article",
+    "showKeyboard": "Show Keyboard",
+    "refresh": "New Text",
+    "tabHint": "Tab for new text",
+    "backHome": "Back to Home",
+    "completed": "Done!",
+    "wpm": "Speed",
+    "accuracy": "Accuracy",
+    "time": "Time",
+    "wpmUnit": "WPM",
+    "accuracyUnit": "%",
+    "timeUnit": "s",
+    "placeholder": {
+      "uyghur": "Type here in Uyghur...",
+      "pinyin": "Type pinyin here...",
+      "wubi": "Type wubi codes here...",
+      "english": "Type here..."
+    }
+  },
+  "seo": {
+    "uyghur": {
+      "title": "Uyghur Typing Practice - HatHat",
+      "description": "Free online Uyghur typing practice with virtual keyboard. Learn Uyghur Arabic-script input and track your WPM speed."
+    },
+    "pinyin": {
+      "title": "Pinyin Typing Practice - HatHat",
+      "description": "Free online Chinese Pinyin typing practice. Improve your Mandarin input speed with real-time WPM and accuracy tracking."
+    },
+    "wubi": {
+      "title": "Wubi Typing Practice - HatHat",
+      "description": "Free online Wubi input method practice. Learn Wubi radical keys with keyboard hints and boost your Chinese typing efficiency."
+    },
+    "english": {
+      "title": "English Typing Practice - HatHat",
+      "description": "Free online English typing practice with words, sentences and articles. Track your WPM speed and accuracy in real-time."
+    },
+    "home": {
+      "title": "HatHat - Free Online Typing Practice | Uyghur Pinyin Wubi English",
+      "description": "HatHat offers free online typing practice for Uyghur, Chinese Pinyin, Wubi and English. Track speed and accuracy. No registration needed."
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 HatHat. All rights reserved.",
+    "privacy": "Privacy Policy"
+  }
+}

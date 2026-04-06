@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于"
+  },
+  "home": {
+    "title": "在线打字练习",
+    "subtitle": "提升你的输入速度与准确率",
+    "tagline": "免费 · 无需注册 · 打开即练",
+    "startPractice": "开始练习",
+    "whyHathat": "为什么选择 HatHat？",
+    "feature1": "支持多种语言打字练习",
+    "feature2": "实时显示打字速度和准确率",
+    "feature3": "虚拟键盘辅助学习",
+    "feature4": "完全免费，无需注册",
+    "faqTitle": "常见问题",
+    "faq1Q": "HatHat 支持哪些语言？",
+    "faq1A": "目前支持维吾尔语、汉语拼音、五笔输入法和英文四种打字练习模式。",
+    "faq2Q": "需要注册账号吗？",
+    "faq2A": "完全不需要，打开网页即可开始练习，所有功能免费使用。",
+    "faq3Q": "如何提高打字速度？",
+    "faq3A": "建议从单词练习开始，逐步过渡到句子和文章，坚持每天练习效果最佳。"
+  },
+  "modes": {
+    "uyghur": {
+      "label": "维吾尔语打字",
+      "description": "练习维吾尔语键盘布局，掌握阿拉伯字母输入"
+    },
+    "pinyin": {
+      "label": "拼音打字",
+      "description": "练习汉语拼音输入，提升中文打字速度"
+    },
+    "wubi": {
+      "label": "五笔打字",
+      "description": "五笔字根练习，掌握高效汉字输入法"
+    },
+    "english": {
+      "label": "英文打字",
+      "description": "英文单词与文章练习，提升英语输入速度"
+    }
+  },
+  "practice": {
+    "word": "单词",
+    "sentence": "句子",
+    "article": "文章",
+    "showKeyboard": "显示键盘",
+    "refresh": "换一批",
+    "tabHint": "Tab 键换一题",
+    "backHome": "返回首页",
+    "completed": "完成！",
+    "wpm": "速度",
+    "accuracy": "准确率",
+    "time": "用时",
+    "wpmUnit": "字/分",
+    "accuracyUnit": "%",
+    "timeUnit": "秒",
+    "placeholder": {
+      "uyghur": "بۇ يەرگە كىرگۈزۈڭ...",
+      "pinyin": "在此输入拼音...",
+      "wubi": "在此输入五笔编码...",
+      "english": "Type here..."
+    }
+  },
+  "seo": {
+    "uyghur": {
+      "title": "维吾尔语打字练习 - HatHat在线打字",
+      "description": "免费在线维吾尔语打字练习，通过虚拟键盘学习维吾尔语字母输入，提升打字速度与准确率。"
+    },
+    "pinyin": {
+      "title": "拼音打字练习 - HatHat在线打字",
+      "description": "免费在线拼音打字练习，提高汉语拼音输入速度，实时显示WPM速度和准确率统计。"
+    },
+    "wubi": {
+      "title": "五笔打字练习 - HatHat在线打字",
+      "description": "免费在线五笔打字练习，通过字根键盘提示系统掌握五笔输入法，提升中文录入效率。"
+    },
+    "english": {
+      "title": "英文打字练习 - HatHat在线打字",
+      "description": "免费在线英文打字练习，通过单词、句子和文章训练提升英文输入速度和准确率。"
+    },
+    "home": {
+      "title": "HatHat - 免费在线打字练习 | 维吾尔语 拼音 五笔 英文",
+      "description": "HatHat提供免费在线打字练习，支持维吾尔语、拼音、五笔、英文四种模式，实时统计打字速度与准确率，无需注册即可使用。"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 HatHat. 保留所有权利。",
+    "privacy": "隐私政策"
+  }
+}

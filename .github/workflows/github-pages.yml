@@ -4,9 +4,7 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_dispatch:   # 已迁移到阿里云，保留此文件仅供参考，取消自动触发
 
 permissions:
   contents: read
