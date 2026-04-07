@@ -8,9 +8,9 @@ export const UY_WORDS = wordsRaw
   .map(w => w.trim())
   .filter(w => w.length > 0);
 
-// 解析句子：使用 ### 分割
+// 解析句子：每行一个，过滤空行
 export const UY_SENTENCES = sentencesRaw
-  .split('###')
+  .split('\n')
   .map(s => s.trim())
   .filter(s => s.length > 0);
 
